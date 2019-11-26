@@ -1,13 +1,5 @@
-import 'dart:async';
+library onboarding_anim;
 
-import 'package:flutter/services.dart';
-
-class OnboardingAnim {
-  static const MethodChannel _channel =
-      const MethodChannel('onboarding_anim');
-
-  static Future<String> get platformVersion async {
-    final String version = await _channel.invokeMethod('getPlatformVersion');
-    return version;
-  }
-}
+export 'package:onboarding_anim/src/widget/onboarding.dart' show OnBoardingScreen;
+export 'package:onboarding_anim/src/model/page.dart' show PageModel;
+export 'package:onboarding_anim/src/model/onboarding_decoration.dart' show OnboardingDecoration;

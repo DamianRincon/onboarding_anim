@@ -1,55 +1,68 @@
 import 'package:flutter/material.dart';
-import 'dart:async';
-
-import 'package:flutter/services.dart';
 import 'package:onboarding_anim/onboarding_anim.dart';
 
-void main() => runApp(MyApp());
-
+void main() {
+  runApp(
+  MaterialApp(
+    theme: ThemeData(
+      primaryColor: Colors.red
+    ),
+  home: MyApp()
+));
+}
 class MyApp extends StatefulWidget {
   @override
   _MyAppState createState() => _MyAppState();
 }
 
 class _MyAppState extends State<MyApp> {
-  String _platformVersion = 'Unknown';
+
+  List<PageModel> pages = <PageModel>[
+    PageModel(
+      title: "Relax",
+      body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.",
+      image: Image(image: NetworkImage("https://i-love-png.com/images/kraken_body03_final_01.png")),
+    ),
+    PageModel(
+      title: "Flutter",
+      body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.",
+      image: Image(image: NetworkImage("https://i-love-png.com/images/kraken_body01_final_01_1766.png"))
+    ),
+    PageModel(
+      title: "Is Awesome",
+      body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.",
+      image: Image(image: NetworkImage("https://i-love-png.com/images/kraken_body03_final_01.png"))
+    ),
+    PageModel(
+      title: "And Beautiful",
+      body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.",
+      image: Image(image: NetworkImage("https://i-love-png.com/images/kraken_body01_final_01_1766.png"))
+    )
+  ];
 
   @override
   void initState() {
     super.initState();
-    initPlatformState();
-  }
-
-  // Platform messages are asynchronous, so we initialize in an async method.
-  Future<void> initPlatformState() async {
-    String platformVersion;
-    // Platform messages may fail, so we use a try/catch PlatformException.
-    try {
-      platformVersion = await OnboardingAnim.platformVersion;
-    } on PlatformException {
-      platformVersion = 'Failed to get platform version.';
-    }
-
-    // If the widget was removed from the tree while the asynchronous platform
-    // message was in flight, we want to discard the reply rather than calling
-    // setState to update our non-existent appearance.
-    if (!mounted) return;
-
-    setState(() {
-      _platformVersion = platformVersion;
-    });
   }
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text('Plugin example app'),
+    return Scaffold(
+      body: OnBoardingScreen (
+        onboardingDecoration: OnboardingDecoration(
+          aling: Alignment.topCenter,
+          child: Image(
+            image: NetworkImage("https://www.themexpert.com/images/easyblog_articles/531/b2ap3_large_Mountains.PNG"),
+            width: MediaQuery.of(context).size.width,
+          )
         ),
-        body: Center(
-          child: Text('Running on: $_platformVersion\n'),
-        ),
+        pages: pages,
+        onDone: (){
+          print("Done");
+        },
+        onSkip: (){
+          print("Skip");
+        }
       ),
     );
   }
