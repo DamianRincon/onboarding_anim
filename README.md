@@ -106,3 +106,26 @@ body: OnBoardingScreen (
    ),
 )
 ```
+## Custom Colors Indicators
+
+```dart
+Scaffold(
+  body: OnBoardingScreen (
+    onboardingDecoration: OnboardingDecoration(
+      aling: Alignment.topCenter,
+      child: Image(
+        image: NetworkImage("https://www.themexpert.com/images/easyblog_articles/531/b2ap3_large_Mountains.PNG"),
+        width: MediaQuery.of(context).size.width,
+       )
+     ),
+     pages: pages,
+     onDone: () => print("Done"),
+     onSkip: () => print("Skip"),
+     indicatorDecoration: IndicatorDecoration(
+      active: Colors.red,
+      inactive: Colors.blueGrey,
+      shadow: Colors.blue
+    )
+  )
+)
+```
