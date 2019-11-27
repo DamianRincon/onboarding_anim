@@ -1,6 +1,6 @@
-# onboarding_anim
+# onboarding_anim [![pub package](https://img.shields.io/pub/v/onboarding_anim.svg)](https://pub.dev/packages/onboarding_anim)
 
-Una libreria para crear un onboarding de manera sencilla, y con una hermosa animación.
+A library to create an onboarding in a simple way, and with a beautiful animation.
 
 ## Installation
 
