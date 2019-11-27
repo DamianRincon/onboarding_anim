@@ -1,5 +1,3 @@
-library onboarding_anim;
-
 import 'package:flutter/material.dart';
 
 class IndicatorDecoration {

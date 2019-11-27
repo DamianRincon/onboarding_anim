@@ -57,12 +57,8 @@ class _MyAppState extends State<MyApp> {
           )
         ),
         pages: pages,
-        onDone: (){
-          print("Done");
-        },
-        onSkip: (){
-          print("Skip");
-        }
+        onDone: () => print("Done"),
+        onSkip: () => print("Skip")
       ),
     );
   }
