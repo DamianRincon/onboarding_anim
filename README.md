@@ -1,6 +1,6 @@
 # onboarding_anim
 
-Una libreria para crear un onboarding de manera sencilla, y con una hermosa animación.
+A library to create an onboarding in a simple way, and with a beautiful animation.
 
 ## Installation
 
