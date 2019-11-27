@@ -15,7 +15,7 @@ dependencies:
 
 
 
-[![Demo OnboardingAnim alpha](https://j.gifs.com/D1ZqKY.gif)](https://raw.githubusercontent.com/DamianRincon/onboarding_anim/master/asset/Screenrecorder-2019-11-26-18-02-19-325.mp4)
+[![Demo OnboardingAnim alpha](https://j.gifs.com/D1ZqKY.gif)](https://j.gifs.com/D1ZqKY.gif)
 
 In order to create onboarding we need a list of pages in this case we use a model `PageModel`
 
