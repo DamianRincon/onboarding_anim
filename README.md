@@ -13,6 +13,10 @@ dependencies:
 
 ## Example
 
+
+
+[![Demo OnboardingAnim alpha](https://j.gifs.com/D1ZqKY.gif)](https://j.gifs.com/D1ZqKY.gif)
+
 In order to create onboarding we need a list of pages in this case we use a model `PageModel`
 
 ## PageModel
