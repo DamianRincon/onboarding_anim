@@ -8,7 +8,7 @@ You just need to add `onboarding_anim` as a [dependency in your pubspec.yaml fil
 
 ```yaml
 dependencies:
-  onboarding_anim: ^0.0.2
+  onboarding_anim: ^1.0.1
 ```
 
 ## Example
