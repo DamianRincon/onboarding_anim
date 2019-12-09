@@ -6,10 +6,23 @@ import 'package:flutter/material.dart';
 import 'package:onboarding_anim/src/model/indicator_decoration.dart';
 import 'package:onboarding_anim/src/model/onboarding_decoration.dart';
 import 'package:onboarding_anim/src/model/page.dart';
+import 'package:onboarding_anim/src/widget/dots.dart';
 import 'package:onboarding_anim/src/widget/next_button.dart';
 import 'package:onboarding_anim/src/widget/skip_button.dart';
 
 class OnBoardingScreen extends StatefulWidget {
+  /// Dots for default example
+  static int dotsDefault = 0;
+
+  /// Linear Progress Bar
+  static int dotsLinearProgress = 1;
+
+  /// Dots Small to Large
+  static int dotsSmallLarge = 2;
+
+  /// Dots Smaill to Big
+  static int dotsSmallBig = 3;
+
   /// All pages of the onboarding
   final List<PageModel> pages;
 
@@ -40,6 +53,11 @@ class OnBoardingScreen extends StatefulWidget {
   /// @Default `0`
   final int initialPage;
 
+  /// Dots
+  ///
+  /// @Default `0`
+  final int dotsType;
+
   /// Indicator decoration
   /// Contain all page customizations, like color active & inactice and shadow
   final IndicatorDecoration indicatorDecoration;
@@ -58,6 +76,7 @@ class OnBoardingScreen extends StatefulWidget {
       this.showSkipButton = true,
       this.animationDuration = 300,
       this.initialPage = 0,
+      this.dotsType = 0,
       this.indicatorDecoration = const IndicatorDecoration(),
       this.onboardingDecoration})
       : assert(pages != null),
@@ -66,7 +85,6 @@ class OnBoardingScreen extends StatefulWidget {
           "You provide at least one page on introduction screen !",
         ),
         assert(onDone != null),
-        //assert((skip != null && showSkipButton) || !showSkipButton),
         super(key: key);
 
   @override
@@ -190,9 +208,9 @@ class _OnBoardingScreenState extends State<OnBoardingScreen>
         left: 30.0,
         bottom: 55.0,
         child: Container(
-            width: 160.0,
-            child: _PageIndicator(
-                _currentPage, widget.pages.length, widget.indicatorDecoration)),
+          width: 160.0,
+          child: Dots(_currentPage, widget.pages.length, widget.dotsType, widget.indicatorDecoration),
+        )
       ),
       Positioned(
           right: 30.0,
@@ -213,50 +231,5 @@ class _OnBoardingScreenState extends State<OnBoardingScreen>
     } else {
       return widget.done;
     }
-  }
-}
-
-class _PageIndicator extends StatelessWidget {
-  final int currentIndex;
-  final int pageCount;
-  final IndicatorDecoration _indicatorDecoration;
-  _PageIndicator(this.currentIndex, this.pageCount, this._indicatorDecoration);
-
-  _indicator(bool isActive) {
-    return Expanded(
-      child: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 4.0),
-        child: Container(
-          height: isActive ? 7 : 3.5,
-          decoration: BoxDecoration(
-              color: isActive
-                  ? _indicatorDecoration.active
-                  : _indicatorDecoration.inactive,
-              borderRadius: BorderRadius.circular(20),
-              boxShadow: [
-                BoxShadow(
-                    color: _indicatorDecoration.shadow,
-                    offset: Offset(0.0, 2.0),
-                    blurRadius: 2.0)
-              ]),
-        ),
-      ),
-    );
-  }
-
-  _buildPageIndicators() {
-    List<Widget> indicatorList = [];
-    for (int i = 0; i < pageCount; i++) {
-      indicatorList
-          .add(i == currentIndex ? _indicator(true) : _indicator(false));
-    }
-    return indicatorList;
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Row(
-      children: _buildPageIndicators(),
-    );
   }
 }

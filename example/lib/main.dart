@@ -5,7 +5,8 @@ void main() {
   runApp(
   MaterialApp(
     theme: ThemeData(
-      primaryColor: Colors.red
+      primaryColor: Colors.deepOrange,
+      accentColor: Colors.deepOrange[200]
     ),
   home: MyApp()
 ));
@@ -33,7 +34,7 @@ class _MyAppState extends State<MyApp> {
       body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.",
       image: Image(image: NetworkImage("https://i-love-png.com/images/kraken_body03_final_01.png"))
     ),
-    PageModel(
+    PageModel (
       title: "And Beautiful",
       body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.",
       image: Image(image: NetworkImage("https://i-love-png.com/images/kraken_body01_final_01_1766.png"))
@@ -58,8 +59,13 @@ class _MyAppState extends State<MyApp> {
         ),
         pages: pages,
         onDone: () => print("Done"),
-        onSkip: () => print("Skip")
-      ),
+        onSkip: () => print("Skip"),
+        dotsType: OnBoardingScreen.dotsLinearProgress,
+        indicatorDecoration: IndicatorDecoration(
+          active: Colors.deepOrange,
+          inactive: Colors.deepOrange[200]
+        )
+      )
     );
   }
 }
