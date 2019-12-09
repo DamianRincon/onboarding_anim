@@ -14,10 +14,19 @@ dependencies:
 ## Example
 
 
-
 [![Demo OnboardingAnim alpha](https://j.gifs.com/D1ZqKY.gif)](https://j.gifs.com/D1ZqKY.gif)
 
 In order to create onboarding we need a list of pages in this case we use a model `PageModel`
+
+## Dots Example
+
+| dotsType: OnBoardingScreen.dotsDefault | dotsType: OnBoardingScreen.dotsLinearProgress |
+:-------------------------:|:-------------------------:
+![](https://raw.githubusercontent.com/DamianRincon/onboarding_anim/master/asset/Simulator%20Screen%20Shot%20-%20iPhone%2011%20Pro%20-%202019-12-09%20at%2017.14.04.png)  |  ![](https://github.com/DamianRincon/onboarding_anim/raw/master/asset/Simulator%20Screen%20Shot%20-%20iPhone%2011%20Pro%20-%202019-12-09%20at%2017.14.53.png)
+
+| dotsType: OnBoardingScreen.dotsSmallLarge | dotsType: OnBoardingScreen.dotsSmallBig |
+:-------------------------:|:-------------------------:
+![](https://github.com/DamianRincon/onboarding_anim/raw/master/asset/Simulator%20Screen%20Shot%20-%20iPhone%2011%20Pro%20-%202019-12-09%20at%2017.15.05.png)  |  ![](https://github.com/DamianRincon/onboarding_anim/raw/master/asset/Simulator%20Screen%20Shot%20-%20iPhone%2011%20Pro%20-%202019-12-09%20at%2017.15.17.png)
 
 ## PageModel
 ### Simple page
