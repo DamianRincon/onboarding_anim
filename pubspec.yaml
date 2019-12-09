@@ -1,6 +1,6 @@
 name: onboarding_anim
 description: Una libreria para crear un onboarding de manera sencilla, y con una hermosa animación.
-version: 1.0.0
+version: 1.0.1
 homepage: https://github.com/DamianRincon/onboarding_anim
 
 environment:

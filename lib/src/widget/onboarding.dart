@@ -205,13 +205,13 @@ class _OnBoardingScreenState extends State<OnBoardingScreen>
                 : widget.skip,
           )),
       Positioned(
-        left: 30.0,
-        bottom: 55.0,
-        child: Container(
-          width: 160.0,
-          child: Dots(_currentPage, widget.pages.length, widget.dotsType, widget.indicatorDecoration),
-        )
-      ),
+          left: 30.0,
+          bottom: 55.0,
+          child: Container(
+            width: 160.0,
+            child: Dots(_currentPage, widget.pages.length, widget.dotsType,
+                widget.indicatorDecoration),
+          )),
       Positioned(
           right: 30.0,
           bottom: 30.0,

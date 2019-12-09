@@ -11,3 +11,7 @@
 ## 1.0.0
 
 * Production version
+
+## 1.0.1
+
+* Resolve conficts

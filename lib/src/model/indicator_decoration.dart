@@ -13,6 +13,5 @@ class IndicatorDecoration {
   const IndicatorDecoration(
       {this.active = Colors.red,
       this.inactive = Colors.redAccent,
-      this.shadow = Colors.white
-    });
+      this.shadow = Colors.white});
 }
