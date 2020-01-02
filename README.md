@@ -41,19 +41,6 @@ PageModel(
 )
 ```
 
-### Page with custom colors
-
-```dart
-PageModel(
-  title: "Relax",
-  body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna    aliqua. Ut enim ad minim veniam.",
-  image: Image(image: NetworkImage("https://i-love-png.com/images/kraken_body03_final_01.png")),
-  decoration: PageDecoration(
-    pageColor: Colors.blue,
-  )
-)
-```
-
 ### Page with custom text style
 
 ```dart
